@@ -15,8 +15,4 @@ export class CivilPage {
 
   constructor(public navCtrl: NavController) {}
 
-  ionViewDidLoad() {
-    console.log('Hello CivilPage Page');
-  }
-
 }
