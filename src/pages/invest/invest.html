@@ -14,10 +14,16 @@
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label fixed>Enter Amount</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
-  <button ion-button>Pay</button>
+  <ion-list>
+    <ion-item (click)="itemSelected(item)">
+      Real Estate
+    </ion-item>
+    <ion-item (click)="itemSelected(item)">
+      Securities
+    </ion-item>
+    <ion-item (click)="itemSelected(item)">
+      Business
+    </ion-item>
+  </ion-list>
   <h5>Current Balance:50,000 Tsh </h5>
 </ion-content>
