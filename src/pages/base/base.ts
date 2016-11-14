@@ -67,4 +67,10 @@ export class BasePage {
   goToSupermarketPag(){
     this.navCtrl.push(SupermarketPage);
   }
+  goToSavingsAccountPage(){
+
+  }
+  goToSupermarketPage(){
+
+  }
 }
