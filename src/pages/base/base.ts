@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {CivilPage} from "../civil/civil";
-import {CourtsPage} from "../pages/courts/courts";
-import {HospitalPage} from "../pages/hospital/hospital";
-import {InsuranceBrokerPage} from "../pages/insurance-broker/insurance-broker";
-import {InvestPage} from "../pages/invest/invest";
-import {MobilemoneyPage} from "../pages/mobilemoney/mobilemoney";
-import {PhoneBalancePage} from "../pages/phone-balance/phone-balance";
-import {RevenueAuthorityPage} from "../pages/revenue-authority/revenue-authority";
-import {SavingsPage} from "../pages/savings/savings";
-import {SsfPage} from "../pages/ssf/ssf";
-import {SupermarketPage} from "../pages/supermarket/supermarket";
+import {CourtsPage} from "../courts/courts";
+import {HospitalPage} from "../hospital/hospital";
+import {InsuranceBrokerPage} from "../insurance-broker/insurance-broker";
+import {InvestPage} from "../invest/invest";
+import {MobilemoneyPage} from "../mobilemoney/mobilemoney";
+import {PhoneBalancePage} from "../phone-balance/phone-balance";
+import {RevenueAuthorityPage} from "../revenue-authority/revenue-authority";
+import {SavingsPage} from "../savings/savings";
+import {SsfPage} from "../ssf/ssf";
+import {SupermarketPage} from "../supermarket/supermarket";
 
 /*
   Generated class for the Base page.
@@ -34,6 +34,9 @@ export class BasePage {
     this.navCtrl.push(CivilPage);
   }
 
+  goToCivilPage(){
+    this.navCtrl.push(CivilPage);
+  }
   goToCourtsPage(){
     this.navCtrl.push(CourtsPage);
   }
