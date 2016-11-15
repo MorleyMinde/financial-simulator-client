@@ -58,13 +58,13 @@ export class BasePage {
   goToRevenueAuthorityPage(){
     this.navCtrl.push(RevenueAuthorityPage);
   }
-  goToSavingsPage(){
+  goToSavingsAccountPage(){
     this.navCtrl.push(SavingsPage);
   }
   goToSsfPage(){
     this.navCtrl.push(SsfPage);
   }
-  goToSupermarketPag(){
+  goToSupermarketPage(){
     this.navCtrl.push(SupermarketPage);
   }
 }
