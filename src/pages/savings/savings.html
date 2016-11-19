@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar >
     <ion-title>My Bank Savings</ion-title>
   </ion-navbar>
 
@@ -14,13 +14,25 @@
 
 
 <ion-content padding>
-  <ion-list>
-  <ion-item >
-    Send Money
-  </ion-item>
-  <ion-item >
-    Withdraw Cash
-  </ion-item>
-</ion-list>
+  <ion-row>
+    <ion-col width-50>
+      <ion-card primary style="background-color: #A4D9EE;" (tap)="goToSendmoneyPage()">
+          <ion-card-header>
+            <img src="assets/img/sendmoney.png" style="width:10%"/>
+          </ion-card-header>
+          <ion-card-content>
+            Send Money
+          </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-card primary style="background-color: #A4D9EE;" (tap)="goToGetmoneyPage()">
+        <ion-card-header>
+          <img src="assets/img/withdraw.png" style="width:10%"/>
+        </ion-card-header>
+        <ion-card-content>
+          Withdraw Cash
+        </ion-card-content>
+    </ion-card>
+  </ion-row>
   <h5>Your Current Bank Savings Balance: 50,000 Tsh </h5>
 </ion-content>

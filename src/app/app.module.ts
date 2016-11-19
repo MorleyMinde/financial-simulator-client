@@ -14,6 +14,8 @@ import {RevenueAuthorityPage} from "../pages/revenue-authority/revenue-authority
 import {SavingsPage} from "../pages/savings/savings";
 import {SsfPage} from "../pages/ssf/ssf";
 import {SupermarketPage} from "../pages/supermarket/supermarket";
+import {SendmoneyPage} from "../pages/sendmoney/sendmoney";
+import {GetmoneyPage} from "../pages/getmoney/getmoney";
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +31,9 @@ import {SupermarketPage} from "../pages/supermarket/supermarket";
     RevenueAuthorityPage,
     SavingsPage,
     SsfPage,
-    SupermarketPage
+    SupermarketPage,
+    SendmoneyPage,
+    GetmoneyPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -49,7 +53,9 @@ import {SupermarketPage} from "../pages/supermarket/supermarket";
       RevenueAuthorityPage,
       SavingsPage,
       SsfPage,
-      SupermarketPage
+      SupermarketPage,
+      SendmoneyPage,
+      GetmoneyPage
   ],
   providers: []
 })

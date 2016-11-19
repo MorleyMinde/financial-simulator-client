@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {SendmoneyPage} from "../sendmoney/sendmoney";
+import {GetmoneyPage} from "../getmoney/getmoney";
 
 /*
   Generated class for the Savings page.
@@ -19,4 +21,10 @@ export class SavingsPage {
     console.log('Hello SavingsPage Page');
   }
 
+  goToSendmoneyPage(){
+    this.navCtrl.push(SendmoneyPage);
+  }
+  goToGetmoneyPage(){
+    this.navCtrl.push(GetmoneyPage);
+  }
 }
