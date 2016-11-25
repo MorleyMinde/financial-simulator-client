@@ -25,7 +25,17 @@ export class BasePage {
   showPrompt() {
     let prompt = this.alertCtrl.create({
       title: 'Menu',
-      message: "Menu Items",
+      message: "1. My Bank Savings  \n"
+                +" 2. My Phone Balance  \n"
+                +" 3. Invest \n"
+                +" 4. Mobile Money Agent  \n"
+                +" 5. Social Security Fund  \n"
+                +" 6. Revenue Authority  \n"
+                +" 7. Insurance Broker  \n"
+                +" 8. Civil Engineers Ltd  \n"
+                +" 9. Hospital  \n"
+                +" 10. Supermarket  \n"
+                +" 11. Courts",
       inputs: [
         {
           name: 'choice',
