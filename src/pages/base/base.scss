@@ -1,3 +1,15 @@
 page-base {
-	
+	scroll-content {
+			display: flex;
+			flex-direction: column;
+	}
+
+	ion-grid {
+			padding: 0;
+			height: 100%;
+	}
+
+	.space {
+			flex: 1;
+	}
 }
