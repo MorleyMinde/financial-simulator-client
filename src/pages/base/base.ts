@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,LoadingController } from 'ionic-angular';
 import { Menu } from '../../providers/menu';
 import { AlertController } from 'ionic-angular';
 
@@ -16,26 +16,27 @@ import { AlertController } from 'ionic-angular';
 })
 export class BasePage {
 
-  constructor(public navCtrl: NavController,public menu: Menu,public alertCtrl: AlertController) {}
+  constructor(public navCtrl: NavController,public menu: Menu,public alertCtrl: AlertController,public loadingCtrl: LoadingController) {}
 
   ionViewDidLoad() {
     console.log('Hello BasePage Page');
   }
 
-  showPrompt() {
+  showPrompt(value?) {
+    let loader = this.loadingCtrl.create({
+      content: "Please wait..."
+    });
+    loader.present();
+    this.menu.getResponse(value).then((results) =>{
+      this.present(results);
+      loader.dismiss();
+    })
+
+  }
+  present(results){
     let prompt = this.alertCtrl.create({
-      title: 'Menu',
-      message: "1. My Bank Savings  \n"
-                +" 2. My Phone Balance  \n"
-                +" 3. Invest \n"
-                +" 4. Mobile Money Agent  \n"
-                +" 5. Social Security Fund  \n"
-                +" 6. Revenue Authority  \n"
-                +" 7. Insurance Broker  \n"
-                +" 8. Civil Engineers Ltd  \n"
-                +" 9. Hospital  \n"
-                +" 10. Supermarket  \n"
-                +" 11. Courts",
+      title: results.title,
+      message: results.message,
       inputs: [
         {
           name: 'choice',
@@ -46,12 +47,13 @@ export class BasePage {
         {
           text: 'Cancel',
           handler: data => {
-            console.log('Cancel clicked');
+            this.menu.getResponse(data.choice)
           }
         },
         {
           text: 'Send',
           handler: data => {
+            this.showPrompt(data.choice);
             console.log('Send clicked');
           }
         }
@@ -59,20 +61,4 @@ export class BasePage {
     });
     prompt.present();
   }
-
-  /*value('transactions',
-    [
-    { title: 'My Bank Savings', id: 1 },
-    { title: 'My Phone Balance', id: 2 },
-    { title: 'Invest', id: 3 },
-    { title: 'Mobile Money Agent', id: 4 },
-    { title: 'Social Security Fund', id: 5 },
-    { title: 'Revenue Authority', id: 6 },
-    { title: 'Insurance Broker', id: 7 },
-    { title: 'Civil Engineers Ltd', id: 8 },
-    { title: 'Hospital', id: 9 },
-    { title: 'Supermarket', id: 10 },
-    { title: 'Courts', id: 11 },
-  ]
-  )*/
 }
