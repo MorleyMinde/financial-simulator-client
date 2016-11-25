@@ -80,10 +80,15 @@ export class Menu{
 
           }
           if(this.session && value != "0"){
-            console.log(value,this.session);
-            response.title = this.session.children[value].title;
-            response.message = this.session.children[value].message;
-            this.session = this.session.children[value].children;
+            console.log(this.session);
+            if(this.session.children[value]){
+              response.title = this.session.children[value].title;
+              response.message = this.session.children[value].message;
+              this.session = this.session.children[value];
+            }else{
+              response.title = this.session.title;
+              response.message = "Please enter the provided options <br />" + this.session.message;
+            }
           }else{
             response.title = this.sequence.title;
             response.message = this.sequence.message;
